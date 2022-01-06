@@ -1,6 +1,8 @@
 ﻿using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.Repositories;
 using EntityLayer.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +11,12 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
 {
-    class EfBlogRepository : GenericRepository<Blog>, IBlogDal
+    public class EfBlogRepository : GenericRepository<Blog>, IBlogDal
     {
-
+        Context c = new Context();
+        public List<Blog> GetListWithCategory()
+        {
+            return c.Blogs.Include(x => x.Category).ToList();
+        }
     }
 }
