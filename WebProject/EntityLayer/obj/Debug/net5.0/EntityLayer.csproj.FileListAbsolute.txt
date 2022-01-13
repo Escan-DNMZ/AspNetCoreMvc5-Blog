@@ -10,3 +10,6 @@ C:\Users\escan\source\repos\WebProject\EntityLayer\obj\Debug\net5.0\EntityLayer.
 C:\Users\escan\source\repos\WebProject\EntityLayer\obj\Debug\net5.0\EntityLayer.dll
 C:\Users\escan\source\repos\WebProject\EntityLayer\obj\Debug\net5.0\ref\EntityLayer.dll
 C:\Users\escan\source\repos\WebProject\EntityLayer\obj\Debug\net5.0\EntityLayer.pdb
+C:\Users\escan\source\repos\WebProject\EntityLayer\bin\Debug\net5.0\EntityLayer.runtimeconfig.json
+C:\Users\escan\source\repos\WebProject\EntityLayer\bin\Debug\net5.0\EntityLayer.runtimeconfig.dev.json
+C:\Users\escan\source\repos\WebProject\EntityLayer\obj\Debug\net5.0\EntityLayer.genruntimeconfig.cache

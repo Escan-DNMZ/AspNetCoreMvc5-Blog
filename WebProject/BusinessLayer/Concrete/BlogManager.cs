@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore;
 
 namespace BusinessLayer.Concrete
 {
@@ -28,11 +30,6 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-        public List<Blog> GetBlogListWithCategory()
-        {
-            return _blogDal.GetListWithCategory();
-        }
-
         public Blog GetById(int id)
         {
             return _blogDal.GetById(id);
@@ -40,12 +37,12 @@ namespace BusinessLayer.Concrete
 
         public List<Blog> GetBlogById(int id)
         {
-            return _blogDal.GetListAll(x=>x.BlogId==id);
+            return _blogDal.GetAll(x => x.BlogId == id);
         }
 
         public List<Blog> GetList()
         {
-            return _blogDal.GetListAll();
+            return _blogDal.GetAll(null);
         }
 
         public void UpdateBlog(Blog blog)
@@ -56,6 +53,31 @@ namespace BusinessLayer.Concrete
         Blog IBlogService.GetById(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public List<Blog> GetBlogListByWriter(int id, int count)
+        {
+            return _blogDal.GetAll(x => x.WriterId == id).TakeLast(count).ToList();
+        }
+
+        public List<Blog> GetCategoryAll(Expression<Func<Blog, bool>> filter = null, params Expression<Func<Blog, object>>[] includeProperty)
+        {
+            IQueryable<Blog> query = _blogDal.Query();
+
+            if (filter != null)
+            {
+                query = query.Where(filter);
+            }
+
+            if (includeProperty.Any())
+            {
+                foreach (var item in includeProperty)
+                {
+                    query = query.Include(item);
+                }
+            }
+
+            return query.ToList();
         }
     }
 }

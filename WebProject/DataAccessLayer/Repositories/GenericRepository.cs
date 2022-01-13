@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,10 +24,7 @@ namespace DataAccessLayer.Repositories
             return c.Set<T>().Find(id);
         }
 
-        public List<T> GetListAll()
-        {
-            return c.Set<T>().ToList();
-        }
+
 
         public void Insert(T t)
         {
@@ -34,15 +32,37 @@ namespace DataAccessLayer.Repositories
             c.SaveChanges();
         }
 
-        public List<T> GetListAll(Expression<Func<T, bool>> filter)
-        {
-            return c.Set<T>().Where(filter).ToList();
-        }
+  
 
         public void Update(T t)
         {
             c.Update(t);
             c.SaveChanges();
+        }
+
+        public List<T> GetAll(Expression<Func<T, bool>> filter = null, params Expression<Func<T, object>>[] includeProperty)
+        {
+            IQueryable<T> query = c.Set<T>();
+
+            if (filter != null)
+            {
+                query = query.Where(filter);
+            }
+
+            if (includeProperty.Any())
+            {
+                foreach (var item in includeProperty)
+                {
+                    query = query.Include(item);
+                }
+            }
+
+            return query.ToList();
+        }
+
+        public IQueryable<T> Query()
+        {
+            return c.Set<T>().AsQueryable();
         }
     }
 }

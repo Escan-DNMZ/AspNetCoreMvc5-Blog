@@ -20,10 +20,5 @@ namespace WebProject.Controllers
         {
             return PartialView();
         }
-        public PartialViewResult CommentListByBlog(int id)
-        {
-            var values = cm.GetList(id);
-            return PartialView(values);
-        }
     }
 }

@@ -13,13 +13,13 @@ namespace WebProject.Controllers
         BlogManager bm = new BlogManager(new EfBlogRepository());
         public IActionResult Index()
         {
-            var values = bm.GetBlogListWithCategory();
+            var values = bm.GetCategoryAll(null,x=>x.Category);
             return View(values);
         }
         public IActionResult BlogReadAll(int id)
         {
-            var get = bm.GetBlogById(id);
-            return View(get);
+            var model = bm.GetById(id);
+            return View(model);
         }
     }
 }
