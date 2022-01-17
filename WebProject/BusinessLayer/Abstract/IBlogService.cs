@@ -15,7 +15,7 @@ namespace BusinessLayer.Abstract
         void UpdateBlog(Blog blog);
         List<Blog> GetList();
         Blog GetById(int id);
-        List<Blog> GetBlogListByWriter(int id, int count);
+        List<Blog> GetBlogListByCount(int id, int count);
 
         List<Blog> GetCategoryAll(Expression<Func<Blog, bool>> filter = null, params Expression<Func<Blog, object>>[] includeProperty);
     }

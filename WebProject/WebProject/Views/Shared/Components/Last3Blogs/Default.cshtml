@@ -1,0 +1,37 @@
+﻿@model FooterBlog
+
+@if (Model.Blogs.Count() != 0)
+{
+    foreach (var item in Model.Blogs)
+    {
+
+
+
+        <div class="tech-btm">
+
+            <div class="blog-grids row mb-3">
+                <div class="col-md-5 blog-grid-left">
+                    <a href="single.html">
+                        <img src="@item.BlogImage" class="card-img-top img-fluid" alt="">
+                    </a>
+                </div>
+                <div class="col-md-7 blog-grid-right">
+
+                    <h5>
+                        <a href="single.html">@item.BlogTitle</a>
+                    </h5>
+                    <div class="sub-meta">
+                        <span>
+                            <i class="far fa-clock"></i>  @(((DateTime)item.BlogCreateDate).ToString("ddd-MMM-yyyy"))
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    }
+}
+else
+{
+    <p>No Blogs</p>
+}

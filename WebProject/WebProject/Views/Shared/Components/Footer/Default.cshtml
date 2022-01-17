@@ -1,0 +1,26 @@
+﻿
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 footer-grid-agileits-w3ls text-left">
+                <h3>About US</h3>
+                <p>If you want see About us click button</p>
+                <div class="read">
+                    <a href="/About/Index" class="btn btn-primary read-m">About Us</a>
+                </div>
+            </div>
+            <div class="col-lg-4 footer-grid-agileits-w3ls text-left">
+                <h3>Latest Posts</h3>
+                @await Component.InvokeAsync("Last3Blogs")
+            </div>
+            <!-- subscribe -->
+            @await Html.PartialAsync("~/Views/NewsLetter/SubscribeMail.cshtml")
+        </div>
+        <!-- footer -->
+        @await Html.PartialAsync("~/Views/About/SocialMediaAbout.cshtml")
+
+        <!-- //footer -->
+
+
+    </div>
+</footer>

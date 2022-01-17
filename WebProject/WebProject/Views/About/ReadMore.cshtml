@@ -1,0 +1,63 @@
+﻿@using EntityLayer.Concrete
+@model List<About>
+@{
+    ViewData["Title"] = "ReadMore";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <!--left-->
+        <div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
+            <div class="blog-grid-top">
+                @foreach (var item in Model)
+                {
+                    <a href="/About/ReadMore">
+                        <img src="@item.AboutImage1" class="img-fluid" alt="">
+                    </a>
+                    <h3>
+                        <a href="single.html">About Us </a>
+                    </h3>
+                    <p>
+                        @item.AboutDetails2
+                    </p>
+
+                }
+            </div>
+
+
+        </div>
+
+        <!--//left-->
+        <!--right-->
+        <aside class="col-lg-4 agileits-w3ls-right-blog-con text-right">
+            <div class="right-blog-info text-left">
+                <div class="tech-btm">
+                    <img src="/web/images/banner1.jpg" class="img-fluid" alt="">
+
+                </div>
+                @await Html.PartialAsync("~/Views/NewsLetter/SubscribeMail.cshtml")
+
+                @await Component.InvokeAsync("CategoryList")
+
+                <h5>Last Blogs </h5>
+                <br />
+                @await Component.InvokeAsync("Last3Blogs")
+
+
+                
+                
+            </div>
+
+        </aside>
+        <!--//right-->
+    </div>
+</div>
+<link href="/web/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="/web/css/single.css">
+<link href="/web/css/style.css" rel='stylesheet' type='text/css' />
+<link href="/web/css/fontawesome-all.css" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+      rel="stylesheet">
+<script src="/web/js/bootstrap.js"></script>

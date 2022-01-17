@@ -22,6 +22,11 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
+        public void AddComment(Comment comment)
+        {
+            _commentDal.Insert(comment);
+        }
+
         public List<Comment> GetList(int id)
         {
             return _commentDal.GetAll(x => x.BlogId == id);

@@ -18,7 +18,9 @@ namespace WebProject.ViewComponents.BlogByWriter
             //Kapsülleme
             var model = new BlogListByWriterViewModel
             {
-                Blogs = bm.GetBlogListByWriter(id, 2)
+                Blogs = bm.GetBlogListByCount(id, 2),
+                
+
             };
 
             return View(model);

@@ -58,10 +58,6 @@ C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\scopedcss\bun
 C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\WebProject.TagHelpers.input.cache
 C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\WebProject.TagHelpers.output.cache
 C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\WebProject.RazorCoreGenerate.cache
-C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
-C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
-C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
@@ -154,7 +150,6 @@ C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\S
 C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Blog\Index.cshtml.g.cs
 C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Shared\Partial1.cshtml.g.cs
 C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Shared\Partial2.cshtml.g.cs
-C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Shared\Partial3.cshtml.g.cs
 C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Blog\BlogReadAll.cshtml.g.cs
 C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Comment\PartialAddComment.cshtml.g.cs
 C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Shared\Components\CommentListByBlog\Default.cshtml.g.cs
@@ -167,3 +162,9 @@ C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\WebProject.Mv
 C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Login\Index.cshtml.g.cs
 C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Shared\Components\BlogListByWriter\Default.cshtml.g.cs
 C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\NewsLetter\SubscribeMail.cshtml.g.cs
+C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\ErrorPage\Error1.cshtml.g.cs
+C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\About\Index.cshtml.g.cs
+C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\About\SocialMediaAbout.cshtml.g.cs
+C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Shared\Components\Last3Blogs\Default.cshtml.g.cs
+C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\About\ReadMore.cshtml.g.cs
+C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Shared\Components\Footer\Default.cshtml.g.cs

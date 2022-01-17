@@ -42,7 +42,7 @@ namespace BusinessLayer.Concrete
 
         public List<Blog> GetList()
         {
-            return _blogDal.GetAll(null);
+            return _blogDal.GetAll(null).ToList();
         }
 
         public void UpdateBlog(Blog blog)
@@ -55,9 +55,9 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-        public List<Blog> GetBlogListByWriter(int id, int count)
+        public List<Blog> GetBlogListByCount(int id, int count)
         {
-            return _blogDal.GetAll(x => x.WriterId == id).TakeLast(count).ToList();
+            return _blogDal.GetAll(x => x.WriterId == id || id == 0).TakeLast(count).ToList();
         }
 
         public List<Blog> GetCategoryAll(Expression<Func<Blog, bool>> filter = null, params Expression<Func<Blog, object>>[] includeProperty)

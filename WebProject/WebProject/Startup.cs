@@ -34,8 +34,11 @@ namespace WebProject
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/ErrorPage/Error1");
             }
+
+            app.UseStatusCodePagesWithReExecute("/ErrorPage/Error1", "?code = {0}");
+
             app.UseStaticFiles();
 
             app.UseRouting();
@@ -46,7 +49,7 @@ namespace WebProject
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Blog}/{action=Index}/{id?}");
             });
         }
     }

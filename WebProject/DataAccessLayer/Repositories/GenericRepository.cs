@@ -40,6 +40,7 @@ namespace DataAccessLayer.Repositories
             c.SaveChanges();
         }
 
+
         public List<T> GetAll(Expression<Func<T, bool>> filter = null, params Expression<Func<T, object>>[] includeProperty)
         {
             IQueryable<T> query = c.Set<T>();

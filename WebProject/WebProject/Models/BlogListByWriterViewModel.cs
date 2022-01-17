@@ -9,5 +9,7 @@ namespace WebProject.Models
     public class BlogListByWriterViewModel
     {
         public List<Blog> Blogs { get; set; } // BİR KERE YAP BİR DAHA GERİ DÖNME
+ 
+
     }
 }

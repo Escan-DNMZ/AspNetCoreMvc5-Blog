@@ -13,13 +13,14 @@ namespace WebProject.Controllers
     {
         NewsLetterManager nm = new NewsLetterManager(new EfNewsLetterRepository());
 
+        [HttpGet]
         public PartialViewResult SubscribeMail()
         {
 
             return PartialView();
         }
         [HttpPost]
-        public PartialViewResult SubscribeMail(NewsLatter p)
+        public IActionResult SubscribeMail(NewsLatter p)
         {
             p.MailStatus = true;
             nm.AddNewsLetter(p);
