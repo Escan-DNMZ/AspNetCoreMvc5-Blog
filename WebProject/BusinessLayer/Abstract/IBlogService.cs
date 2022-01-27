@@ -8,15 +8,9 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    interface IBlogService
+    public interface IBlogService:IGenericService<Blog>
     {
-        void AddBlog(Blog blog);
-        void DeleteBlog(Blog blog);
-        void UpdateBlog(Blog blog);
-        List<Blog> GetList();
-        Blog GetById(int id);
-        List<Blog> GetBlogListByCount(int id, int count);
+        public List<Blog> GetBlogListByWriter(int id, params Expression<Func<Blog, object>>[] includeProperty);
 
-        List<Blog> GetCategoryAll(Expression<Func<Blog, bool>> filter = null, params Expression<Func<Blog, object>>[] includeProperty);
     }
 }

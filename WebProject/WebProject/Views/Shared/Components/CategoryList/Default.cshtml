@@ -1,13 +1,21 @@
-﻿@model IEnumerable<EntityLayer.Concrete.Category>
+﻿@model CategoryListViewModel
 <div class="tech-btm">
+
     <h4>Categories</h4>
-    @foreach (var item in Model)
-    {
     <ul class="list-group single">
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            @item.CategoryName
+        <a asp-controller="Blog" asp-action="Index" class="nav-link collapsed" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+        <li class="list-group-item d-flex justify-content-between align-items-lg-center">
+            <a asp-controller="Blog" asp-action="Index">All Categories</a>
         </li>
-        
+            </a>
+            @foreach (var item in Model.Categories)
+            {
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a asp-controller="Blog" asp-action="Index" asp-route-categoryid="@item.CategoryId">@item.CategoryName</a>
+
+
+            </li>
+        }
+    
     </ul>
-    }
 </div>

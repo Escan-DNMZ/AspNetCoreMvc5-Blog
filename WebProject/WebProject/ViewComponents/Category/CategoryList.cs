@@ -14,7 +14,8 @@ namespace WebProject.ViewComponents.Category
 
         public IViewComponentResult Invoke()
         {
-            var values = cm.GetList();
+            
+            var values = new CategoryListViewModel { Categories = cm.GetList() };
             return View(values);
         }
 

@@ -1,4 +1,4 @@
-﻿@model Blog
+﻿@model BlogViewModel
 
 @{
     ViewData["Title"] = "Details";
@@ -9,28 +9,27 @@
     <div class="row">
         <!--left-->
         <div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
+
+
+
             <div class="blog-grid-top">
                 <div class="b-grid-top">
                     <div class="blog_info_left_grid">
-                        <a href="single.html">
-                            <img src="/web/images/b1.jpg" class="img-fluid" alt="">
-                        </a>
+
+                        <img src="@(Model.Blog.BlogImage == null ? "" : Model.Blog.BlogImage)" class="img-fluid" alt="">
+
                     </div>
                     <div class="blog-info-middle">
                         <ul>
                             <li>
                                 <a href="#">
-                                    <i class="far fa-calendar-alt"></i> @(((DateTime)Model.BlogCreateDate).ToString("ddd-MMM-yyyy"))
+                                    <i class="far fa-calendar-alt"></i> @(((DateTime)Model.Blog.BlogCreateDate).ToString("ddd-MMM-yyyy"))
                                 </a>
                             </li>
-                            <li class="mx-2">
-                                <a href="#">
-                                    <i class="far fa-thumbs-up"></i> 201 Likes
-                                </a>
-                            </li>
+
                             <li>
-                                <a href="#">
-                                    <i class="far fa-comment"></i> 15 Comments
+                                <a asp-controller="Blog" asp-action="Index" asp-route-categoryid="@Model.Blog.CategoryId">
+                                    <i class="fas fa-eye"></i> @Model.Blog.Category.CategoryName
                                 </a>
                             </li>
 
@@ -39,17 +38,18 @@
                 </div>
 
                 <h3>
-                    <a href="single.html">@Model.BlogTitle </a>
+                    <a href="single.html">@Model.Blog.BlogTitle </a>
                 </h3>
                 <p>
-                    @Model.BlogContent
+                    @Model.Blog.BlogContent
                 </p>
 
             </div>
 
-            @await Component.InvokeAsync("CommentListByBlog", new { id = Model.BlogId })
 
-            @await Html.PartialAsync("~/Views/Comment/PartialAddComment.cshtml", new Comment() {BlogId = Model.BlogId}) @*BlogId yi gönderdik*@
+            @await Component.InvokeAsync("CommentListByBlog", new { id = Model.Blog.BlogId })
+
+            @await Html.PartialAsync("~/Views/Comment/PartialAddComment.cshtml", new Comment() { BlogId = Model.Blog.BlogId }) @*BlogId yi gönderdik*@
 
 
         </div>
@@ -58,17 +58,14 @@
         <!--right-->
         <aside class="col-lg-4 agileits-w3ls-right-blog-con text-right">
             <div class="right-blog-info text-left">
-                <div class="tech-btm">
-                    <img src="/web/images/banner1.jpg" class="img-fluid" alt="">
 
-                </div>
                 @await Html.PartialAsync("~/Views/NewsLetter/SubscribeMail.cshtml")
 
                 @await Component.InvokeAsync("CategoryList")
 
-                @await Component.InvokeAsync("BlogListByWriter", new { id = Model.WriterId })
+                @await Component.InvokeAsync("BlogListByWriter", new { id = Model.Blog.WriterId })
 
-                
+
             </div>
 
         </aside>

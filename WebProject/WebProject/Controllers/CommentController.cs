@@ -27,7 +27,7 @@ namespace WebProject.Controllers
         {
             p.CommentDate = DateTime.Parse(DateTime.Now.ToShortDateString());
             p.CommentStatus = true;
-            cm.AddComment(p);
+            cm.TAdd(p);
             return RedirectToAction("BlogReadAll","Blog", new {id = p.BlogId });
         }
 

@@ -12,12 +12,17 @@ namespace DataAccessLayer.Abstract
         void Insert(T t);
         void Delete(T t);
         void Update(T t);
+
         
         T GetById(int id);
+
+        T GetById(int id, params Expression<Func<T, object>>[] includeProperty);
 
         List<T> GetAll(Expression<Func<T, bool>> filter = null, params Expression<Func<T, object>>[] includeProperty);
 
         IQueryable<T> Query();
+
+        
 
     }
 }

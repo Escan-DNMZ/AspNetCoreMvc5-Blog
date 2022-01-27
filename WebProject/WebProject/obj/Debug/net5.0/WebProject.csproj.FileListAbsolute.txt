@@ -168,3 +168,14 @@ C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\A
 C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Shared\Components\Last3Blogs\Default.cshtml.g.cs
 C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\About\ReadMore.cshtml.g.cs
 C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Shared\Components\Footer\Default.cshtml.g.cs
+C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Contact\Index.cshtml.g.cs
+C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Writer\Index.cshtml.g.cs
+C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Writer\WriterProfile.cshtml.g.cs
+C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Shared\WriterLayout.cshtml.g.cs
+C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Writer\Test.cshtml.g.cs
+C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Writer\WriterNavbarPartial.cshtml.g.cs
+C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Writer\WriterFooterPartial.cshtml.g.cs
+C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Shared\Components\WriterMessageNotification\Default.cshtml.g.cs
+C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Shared\Components\WriterNotification\Default.cshtml.g.cs
+C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Blog\BlogListByWriter.cshtml.g.cs
+C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Blog\BlogAdd.cshtml.g.cs

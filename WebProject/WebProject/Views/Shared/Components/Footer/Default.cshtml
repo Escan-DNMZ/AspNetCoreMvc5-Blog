@@ -13,9 +13,12 @@
                 <h3>Latest Posts</h3>
                 @await Component.InvokeAsync("Last3Blogs")
             </div>
-            <!-- subscribe -->
-            @await Html.PartialAsync("~/Views/NewsLetter/SubscribeMail.cshtml")
+            <div class="col-lg-4 footer-grid-agileits-w3ls text-left">
+                @await Component.InvokeAsync("CategoryList")
+            </div>
         </div>
+
+        
         <!-- footer -->
         @await Html.PartialAsync("~/Views/About/SocialMediaAbout.cshtml")
 

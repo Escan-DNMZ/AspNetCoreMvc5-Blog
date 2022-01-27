@@ -13,23 +13,26 @@ namespace BusinessLayer.Concrete
 {
     public class BlogManager : IBlogService
     {
-        IBlogDal _blogDal;
+        IBlogDal _blogDal;  
 
         public BlogManager(IBlogDal blogDal)
         {
             _blogDal = blogDal;
         }
-        public void AddBlog(Blog blog)
+        public void TAdd(Blog blog)
         {
-            throw new NotImplementedException();
+            _blogDal.Insert(blog);
 
         }
 
-        public void DeleteBlog(Blog blog)
+        public void TDelete(Blog blog)
         {
-            throw new NotImplementedException();
+            _blogDal.Delete(blog);
         }
-
+        public void TUpdate(Blog t)
+        {
+            _blogDal.Update(t);
+        }
         public Blog GetById(int id)
         {
             return _blogDal.GetById(id);
@@ -50,12 +53,7 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-        Blog IBlogService.GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Blog> GetBlogListByCount(int id, int count)
+        public List<Blog> GetListByCount(int id, int count)
         {
             return _blogDal.GetAll(x => x.WriterId == id || id == 0).TakeLast(count).ToList();
         }
@@ -71,7 +69,7 @@ namespace BusinessLayer.Concrete
 
             if (includeProperty.Any())
             {
-                foreach (var item in includeProperty)
+                foreach (var item in includeProperty) // 0, 1, 2 , 3
                 {
                     query = query.Include(item);
                 }
@@ -79,5 +77,29 @@ namespace BusinessLayer.Concrete
 
             return query.ToList();
         }
+
+        public Blog GetById(int id, params Expression<Func<Blog, object>>[] includeProperty)
+        {
+            IQueryable<Blog> query = _blogDal.Query();
+
+            if (includeProperty.Any())
+            {
+                foreach (var item in includeProperty)
+                {
+                    query = query.Include(item);
+                }
+            }
+
+            return query.FirstOrDefault(x=>x.BlogId == id);
+        }
+
+
+        public List<Blog> GetBlogListByWriter(int id, params Expression<Func<Blog, object>>[] includeProperty)
+        {
+           
+            return _blogDal.GetAll(x => x.WriterId == id,x=>x.Category);
+        }
+
+        
     }
 }

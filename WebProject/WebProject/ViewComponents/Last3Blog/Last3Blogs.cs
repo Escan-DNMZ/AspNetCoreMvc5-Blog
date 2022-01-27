@@ -16,7 +16,7 @@ namespace WebProject.ViewComponents.Last3Blog
             //Kapsülleme
             var model = new FooterBlog
             {
-                Blogs = bm.GetBlogListByCount(0, 3)
+                Blogs = bm.GetListByCount(0, 3)
 
             };
 

@@ -65,5 +65,22 @@ namespace DataAccessLayer.Repositories
         {
             return c.Set<T>().AsQueryable();
         }
+
+        public T GetById(int id, params Expression<Func<T, object>>[] includeProperty)
+        {
+            IQueryable<T> query = (IQueryable<T>)c.Set<T>().Find(id);
+
+            if (includeProperty.Any())
+            {
+                foreach (var item in includeProperty)
+                {
+                    query = query.Include(item);
+                }
+            }
+
+            return query.FirstOrDefault();
+        }
+
+        
     }
 }

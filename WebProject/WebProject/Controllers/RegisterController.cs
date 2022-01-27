@@ -40,7 +40,7 @@ namespace WebProject.Controllers
             {
                 p.WriterStatus = true;
                 p.WriterAbout = "Test";
-                wm.AddWriter(p);
+                wm.TAdd(p);
                 return RedirectToAction("Index", "Blog");
             }
             else

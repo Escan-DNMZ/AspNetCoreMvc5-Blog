@@ -23,7 +23,7 @@ namespace WebProject.Controllers
         public IActionResult SubscribeMail(NewsLatter p)
         {
             p.MailStatus = true;
-            nm.AddNewsLetter(p);
+            nm.TAdd(p);
             return PartialView();
         }
     }

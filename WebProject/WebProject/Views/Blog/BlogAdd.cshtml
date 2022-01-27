@@ -1,0 +1,39 @@
+﻿@model EntityLayer.Concrete.Blog
+@{
+    ViewData["Title"] = "BlogAdd";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+
+
+@using (Html.BeginForm("BlogAdd", "Blog", FormMethod.Post))
+{
+
+    <label>Title</label>
+    @Html.TextBoxFor(x => x.BlogTitle, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.BlogTitle)
+    <br />
+
+    <label>Content</label>
+    @Html.TextAreaFor(model => model.BlogContent, new { @id = "editor1" })
+    @Html.ValidationMessageFor(x => x.BlogContent)
+    <br />
+    <label>Category</label>
+    @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.Category, new { @class = "form-control dropdown" })
+    <br />
+    <label>Image</label>
+    @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.BlogImage, "", new { @class = "text-danger" })
+    <br />
+    <label>Thumbnail</label>
+    @Html.TextBoxFor(x => x.BlogThumbnailImage, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.BlogThumbnailImage, "", new { @class = "text-danger" })
+
+    <br />
+    <button type="submit" class="btn btn-primary submit mb-4">Add</button>
+    
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('editor1');
+    </script>
+}
