@@ -18,26 +18,26 @@
                         
                             <img src="@item.BlogImage" class="card-img-top img-fluid" alt="">
                         
-                        <div class="card-body">
-                            <ul class="blog-icons my-4">
-                                <li>
-                                    <a href="#">
-                                        <i class="far fa-calendar-alt"></i> @(((DateTime)item.BlogCreateDate).ToString("dd-MMM-yyyy"))
-                                    </a>
-                                </li>
-                                <li>
-                                    <a asp-controller="Blog" asp-action="Index" asp-route-categoryid="@item.CategoryId">
-                                        <i class="fas fa-eye"></i> @item.Category.CategoryName
-                                    </a>
-                                </li>
+                            <div class="card-body">
+                                <ul class="blog-icons my-4">
+                                    <li>
+                                        <a href="#">
+                                            <i class="far fa-calendar-alt"></i> @(((DateTime)item.BlogCreateDate).ToString("dd-MMM-yyyy"))
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Blog" asp-action="Index" asp-route-categoryid="@item.CategoryId">
+                                            <i class="fas fa-eye"></i> @item.Category.CategoryName
+                                        </a>
+                                    </li>
 
-                            </ul>
-                            <h5 class="card-title">
-                                <b >@item.BlogTitle</b>
-                            </h5>
-                            <p class="card-text mb-3">@item.BlogContent.Substring(0,item.BlogContent.Substring(0,60).LastIndexOf(" "))... <!--Substring belli bir miktarda karakter getirir LastIndexOf ise son boşluğa kadar getirir--> </p>
-                            <a href="/@UrlExtensions.FriendlyUrl(item.Category.CategoryName)/@UrlExtensions.FriendlyUrl(item.BlogTitle)-@item.BlogId" class="btn btn-primary read-m">Read More</a>
-                        </div> 
+                                </ul>
+                                <h5 class="card-title">
+                                    <b>@item.BlogTitle</b>
+                                </h5>
+                                <p class="card-text mb-3"><p class="card-text mb-3">@(item.BlogContent.Length < 150 ? item.BlogContent : item.BlogContent.Substring(0,item.BlogContent.Substring(0,150).LastIndexOf(" "))) ... </p> <!--Substring belli bir miktarda karakter getirir LastIndexOf ise son boşluğa kadar getirir-->
+                                <a href="/@UrlExtensions.FriendlyUrl(item.Category.CategoryName)/@UrlExtensions.FriendlyUrl(item.BlogTitle)-@item.BlogId" class="btn btn-primary read-m">Read More</a>
+                            </div> 
                     </div>
                     <br/>
                     }

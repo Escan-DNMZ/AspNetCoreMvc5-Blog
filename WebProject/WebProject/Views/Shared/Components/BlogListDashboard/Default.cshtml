@@ -1,0 +1,40 @@
+﻿@model BlogByWriterDashboard
+
+<div class="row">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Last 10 Blogs</h4>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>#</th>
+                                <th>Title</th>
+                                <th>Category</th>
+                                <th>Date</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Blogs)
+                            {
+                                <tr>
+                                    <td>
+                                        <img src="@item.BlogImage" class="mr-2" alt="image">
+                                    </td>
+                                    <td>@item.BlogTitle</td>
+                                    <td>
+                                        <label class="badge badge-gradient-success">@item.Category.CategoryName</label>
+                                    </td>
+                                    <td> @(((DateTime)item.BlogCreateDate).ToString("dd MMMM yyyy"))</td>
+                                    <td><a href="/Blog/BlogReadAll/@item.BlogId" class="btn btn-dark">Details</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

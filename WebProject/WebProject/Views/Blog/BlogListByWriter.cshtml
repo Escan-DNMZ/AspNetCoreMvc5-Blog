@@ -20,15 +20,22 @@
     </tr>
     @foreach (var item in Model)
     {
-        <tr>
-            <td>@item.BlogId</td>
-            <td>@item.BlogTitle</td>
-            <td>@item.BlogCreateDate</td>
-            <td>@item.Category.CategoryName</td>
-            <td>@item.BlogStatus</td>
-            <td><a href="#" class="btn btn-danger">Delete</a></td>
-            <td><a href="#" class="btn btn-success">Update</a></td>
-        </tr>
+<tr>
+    <td>@item.BlogId</td>
+    <td>@item.BlogTitle</td>
+    <td>@item.BlogCreateDate</td>
+    <td>@item.Category.CategoryName</td>
+    @if (item.BlogStatus == true)
+    {
+        <td>Aktif</td>
+    }
+    else
+    {
+        <td>Pasif</td>
+    }
+    <td><a href="/Blog/BlogDelete/@item.BlogId" class="btn btn-danger">Delete</a></td>
+    <td><a href="/Blog/BlogUpdate/@item.BlogId" class="btn btn-success">Update</a></td>
+</tr>
     }
 </table>
 

@@ -58,5 +58,10 @@ namespace BusinessLayer.Concrete
         {
             throw new NotImplementedException();
         }
+        
+        public List<Comment> GetCommentListByWriter(int id, params Expression<Func<Comment, object>>[] includeProperty)
+        {
+            return _commentDal.GetAll(x=>x.Blog.WriterId == id);
+        }
     }
 }

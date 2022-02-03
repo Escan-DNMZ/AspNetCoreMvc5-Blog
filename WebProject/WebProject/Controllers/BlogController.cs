@@ -85,6 +85,52 @@ namespace WebProject.Controllers
                 }
             }
             return View();
-        }
+            }
+            public IActionResult BlogDelete(int id)
+            {
+                var value = bm.GetById(id);
+                bm.TDelete(value);
+                
+                return RedirectToAction("BlogListByWriter","Blog");
+            }
+
+            [HttpGet]
+            public IActionResult BlogUpdate(int id)
+            {
+                var value = bm.GetById(id);
+              List<SelectListItem> Categories = (from x in bm.GetCategoryAll(null, x => x.Category)
+                                               select new SelectListItem
+                                               {
+                                                   Text = x.Category.CategoryName,
+                                                   Value = x.CategoryId.ToString()
+                                               }).ToList();
+              ViewBag.Category = Categories;
+            return View(value);
+            }
+            
+            [HttpPost]
+            public IActionResult BlogUpdate(Blog b)
+            {
+                 BlogValidator bv = new BlogValidator();
+            FluentValidation.Results.ValidationResult result = bv.Validate(b);
+
+                if (result.IsValid)
+                {
+                b.WriterId = Convert.ToInt32(((ClaimsIdentity)User.Identity).FindFirst(ClaimTypes.Name).Value);
+                b.BlogStatus = true;
+
+                bm.TUpdate(b);
+                return RedirectToAction("BlogListByWriter", "Blog");
+                 }
+                else
+                {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                    
+                }
+                return View(b);
+            }
+            }
     }
 }

@@ -1,0 +1,43 @@
+﻿@model CategoryListViewModel
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Category Status</h4>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead class="thead-light">
+                            <tr>
+                                <th> # </th>
+                                <th> Category Name </th>
+                                <th> Status </th>
+                                <th> Point </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Categories)
+                            {
+                            <tr>
+                                <td>@item.CategoryId</td>
+                                <td> @item.CategoryName </td>
+                                    @if (item.CategoryStatus == true)
+                                    {
+                                        <td><span class="btn btn-primary">Aktif</span></td>
+                                    }
+                                    else
+                                    {
+                                        <td><span class="btn btn-danger">Pasif</span></td>
+                                    }
+                                <td>
+                                    ...
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,7 +49,17 @@ namespace BusinessLayer.Concrete
 
         public Writer GetById(int id, params Expression<Func<Writer, object>>[] includeProperty)
         {
-            throw new NotImplementedException();
+            IQueryable<Writer> query = _writerDal.Query();
+
+            if (includeProperty.Any())
+            {
+                foreach (var item in includeProperty)
+                {
+                    query = query.Include(item);
+                }
+            }
+
+            return query.FirstOrDefault(x => x.WriterId == id);
         }
 
         public List<Writer> GetCategoryAll(Expression<Func<Writer, bool>> filter = null, params Expression<Func<Writer, object>>[] includeProperty)

@@ -94,12 +94,18 @@ namespace BusinessLayer.Concrete
         }
 
 
-        public List<Blog> GetBlogListByWriter(int id, params Expression<Func<Blog, object>>[] includeProperty)
+        public List<Blog> GetBlogListByWriterCount(int id,int count, params Expression<Func<Blog, object>>[] includeProperty)
         {
            
-            return _blogDal.GetAll(x => x.WriterId == id,x=>x.Category);
+            return _blogDal.GetAll(x => x.WriterId == id,x=>x.Category).TakeLast(count).ToList();
         }
 
-        
+        public List<Blog> GetBlogListByWriter(int id, params Expression<Func<Blog, object>>[] includeProperty)
+        {
+
+            return _blogDal.GetAll(x => x.WriterId == id, x => x.Category);
+        }
+
+
     }
 }

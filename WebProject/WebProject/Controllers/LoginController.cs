@@ -38,7 +38,7 @@ namespace WebProject.Controllers
                 ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
                 await HttpContext.SignInAsync(principal);   //Şifreli formatta cookie olarak kaydediyor
 
-                return RedirectToAction("Test", "Writer");
+                return RedirectToAction("BlogListByWriter", "Blog");
             }
             else
             {
@@ -46,6 +46,12 @@ namespace WebProject.Controllers
             }
 
             
+        }
+
+        public async Task<IActionResult> LogOut()
+        {
+            await HttpContext.SignOutAsync();
+            return RedirectToAction("Index","Login");
         }
     }
 }
