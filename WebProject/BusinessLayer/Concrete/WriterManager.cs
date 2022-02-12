@@ -6,8 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace BusinessLayer.Concrete
 {
@@ -29,7 +28,7 @@ namespace BusinessLayer.Concrete
 
         public List<Writer> GetList()
         {
-           return _writerDal.GetAll(null);
+           return _writerDal.GetAll();
         }
 
         public void TDelete(Writer t)
@@ -39,7 +38,7 @@ namespace BusinessLayer.Concrete
 
         public void TUpdate(Writer t)
         {
-            throw new NotImplementedException();
+            _writerDal.Update(t);
         }
 
         public List<Writer> GetListByCount(int id, int count)

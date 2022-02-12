@@ -28,16 +28,28 @@ namespace DataAccessLayer.Repositories
 
         public void Insert(T t)
         {
+            c.Update(t);
             c.Add(t);
             c.SaveChanges();
         }
 
-  
+
 
         public void Update(T t)
         {
-            c.Update(t);
-            c.SaveChanges();
+            using (Context context = new Context())
+            {
+                /*
+                 Entity üzerinde değişiklik yapıldığını gösterir.
+                 SaveChanges işlemiyle birlikte veritabanına da değişiklik(ler) yansıyacaktır.
+                 SaveChanges sonrası entity state’i UnChanged olarak değişecektir.
+                 */
+
+                context.Entry(t).State = EntityState.Modified;
+                //c.Update(t);
+                context.SaveChanges();
+            }
+
         }
 
 
@@ -81,6 +93,6 @@ namespace DataAccessLayer.Repositories
             return query.FirstOrDefault();
         }
 
-        
+
     }
 }

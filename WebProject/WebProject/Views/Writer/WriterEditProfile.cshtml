@@ -1,0 +1,62 @@
+﻿@model EntityLayer.Concrete.Writer
+@{
+    ViewData["Title"] = "WriterEditProfile";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+@using (Html.BeginForm("WriterEditProfile", "Writer", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Writer Edit</h4>
+                <br />
+
+                <form class="forms-sample">
+                    <input asp-for="WriterId" type="hidden" />
+
+                    <div class="form-group">
+                        <label for="exampleInputName1">Name</label>
+                        @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.WriterName)
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail3">Email</label>
+                        @Html.TextBoxFor(x => x.WriterMail, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.WriterMail)
+                    </div>
+                    <div class="form-group">
+                        @Html.DropDownListFor(x => x.WriterCity, (List<SelectListItem>)ViewBag.Cities, new { @class = "form-control dropdown" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword4">Password</label>
+                        @Html.PasswordFor(x => x.WriterPassword, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.WriterPassword, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2 mb-2">Confirm Password</label>
+                        <input type="password" name="confirmPassword" class="form-control" id="password2" placeholder="Şifrenizi Tekrar Giriniz" required="" />
+                    </div>
+                    <div class="form-group">
+                        <label>Your Image</label>
+                        <input type="file" name="WriterImage" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleTextarea1">About</label>
+                        @Html.TextAreaFor(x => x.WriterAbout,new { @id = "editor1" })
+                        @Html.ValidationMessageFor(x => x.WriterAbout)
+                    </div>
+                    <button type="submit" class="btn btn-gradient-primary mr-2">Update</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('editor1');
+    </script>
+
+}
+

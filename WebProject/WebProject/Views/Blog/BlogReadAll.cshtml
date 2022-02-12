@@ -16,7 +16,7 @@
                 <div class="b-grid-top">
                     <div class="blog_info_left_grid">
 
-                        <img src="@(Model.Blog.BlogImage == null ? "" : Model.Blog.BlogImage)" class="img-fluid" alt="">
+                        <img src="@(Model.Blog.BlogImage == null ? " " : Model.Blog.BlogImage)" class="img-fluid" alt="">
 
                     </div>
                     <div class="blog-info-middle">
@@ -41,7 +41,7 @@
                     <a href="single.html">@Model.Blog.BlogTitle </a>
                 </h3>
                 <p>
-                    @Model.Blog.BlogContent
+                    @Html.Raw(Model.Blog.BlogContent)
                 </p>
 
             </div>

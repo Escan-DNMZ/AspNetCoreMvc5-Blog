@@ -1,14 +1,9 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
-using DataAccessLayer.EntityFramework;
-using DataAccessLayer.Repositories;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
@@ -38,7 +33,7 @@ namespace BusinessLayer.Concrete
 
         public List<Category> GetList()
         {
-            return _categoryDal.GetAll(null);
+            return _categoryDal.GetAll();
         }
 
         public void TUpdate(Category category)

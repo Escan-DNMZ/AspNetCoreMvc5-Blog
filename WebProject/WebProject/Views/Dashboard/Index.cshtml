@@ -17,7 +17,7 @@
             <div class="card-body">
                 <img src="~/writer/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                 <h4 class="font-weight-normal mb-3">
-                    Sizin Blog Sayınız <i class="mdi mdi-chart-line mdi-24px float-right"></i>
+                      Your Total Blog <i class="mdi mdi-chart-line mdi-24px float-right"></i>
                 </h4>
                 <h2 class="mb-5">@ViewBag.v1</h2>
                 <h6 class="card-text">Software Dev</h6>
@@ -29,9 +29,9 @@
             <div class="card-body">
                 <img src="~/writer/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                 <h4 class="font-weight-normal mb-3">
-                    Toplam Yorum Sayınız <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
+                    Total Comments To You <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
                 </h4>
-                <h2 class="mb-5">@ViewBag.v2</h2>
+                <h2 class="mb-5">@ViewBag.v2</h2>   
                 <h6 class="card-text">Software Dev</h6>
             </div>
         </div>
@@ -41,7 +41,7 @@
             <div class="card-body">
                 <img src="~/writer/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                 <h4 class="font-weight-normal mb-3">
-                    Toplam Blog Sayımız <i class="mdi mdi-diamond mdi-24px float-right"></i>
+                    Total Blogs To Us <i class="mdi mdi-diamond mdi-24px float-right"></i>
                 </h4>
                 <h2 class="mb-5">@ViewBag.v3</h2>
                 <h6 class="card-text">Software Dev</h6>
@@ -52,7 +52,10 @@
 
 @await Component.InvokeAsync("BlogListDashboard")
 
+@await Component.InvokeAsync("WriterAboutOnDashboard")
+
 @await Component.InvokeAsync("CategoryListDashboard")
+
 <div class="row">
     <div class="col-lg-6 grid-margin stretch-card">
         <div class="card">

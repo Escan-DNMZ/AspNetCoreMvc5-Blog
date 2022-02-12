@@ -4,8 +4,6 @@ using DataAccessLayer.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 
@@ -45,7 +43,7 @@ namespace BusinessLayer.Concrete
 
         public List<Blog> GetList()
         {
-            return _blogDal.GetAll(null).ToList();
+            return _blogDal.GetAll().ToList();
         }
 
         public void UpdateBlog(Blog blog)

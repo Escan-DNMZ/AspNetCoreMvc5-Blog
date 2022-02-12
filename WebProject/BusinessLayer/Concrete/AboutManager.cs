@@ -5,8 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
@@ -31,7 +29,7 @@ namespace BusinessLayer.Concrete
 
         public List<About> GetList()
         {
-            return _aboutDal.GetAll(null).ToList();
+            return _aboutDal.GetAll().ToList();
         }
 
         public List<About> GetListByCount(int id, int count)

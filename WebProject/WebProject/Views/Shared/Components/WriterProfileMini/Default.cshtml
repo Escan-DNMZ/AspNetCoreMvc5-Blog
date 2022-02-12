@@ -1,11 +1,13 @@
 ﻿@model Writer
+
 <li class="nav-item nav-profile">
         <a href="#" class="nav-link">
             <div class="nav-profile-image">
-                <img src="@Model.WriterImage" alt="profile">
+                <img src="~/WriterImageFiles/@Model.WriterImage" alt="profile">
                 <span class="login-status online"></span>
                 <!--change to offline or busy as needed-->
             </div>
+            
             <div class="nav-profile-text d-flex flex-column">
                 <span class="font-weight-bold mb-2">@Model.WriterName</span>
                 <span class="text-secondary text-small">@Model.WriterCity</span>

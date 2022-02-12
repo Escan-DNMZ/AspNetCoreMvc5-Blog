@@ -3,10 +3,7 @@ using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
@@ -26,7 +23,7 @@ namespace BusinessLayer.Concrete
 
         public List<Contact> GetList()
         {
-            return _contactDal.GetAll(null);
+            return _contactDal.GetAll();
         }
 
         public void TDelete(Contact t)

@@ -1,4 +1,9 @@
 ﻿
+@{
+    string controller = this.ViewContext.RouteData.Values["controller"].ToString();
+    string action = this.ViewContext.RouteData.Values["action"].ToString();
+}
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -81,10 +86,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <p >Blog</p>
+            <p >@controller</p>
         </li>
-        <li class="breadcrumb-item active">Thank you for visited </li>
-    </ol>
+        <li class="breadcrumb-item active">@action </li>
+    </ol> @* ahanda bura *@
 
     <!--//banner-->
     <!--/main-->

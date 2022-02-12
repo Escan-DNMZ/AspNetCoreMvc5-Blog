@@ -184,3 +184,5 @@ C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\S
 C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Dashboard\Index.cshtml.g.cs
 C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Shared\Components\BlogListDashboard\Default.cshtml.g.cs
 C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Shared\Components\CategoryListDashboard\Default.cshtml.g.cs
+C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Shared\Components\WriterAboutOnDashboard\Default.cshtml.g.cs
+C:\Users\escan\source\repos\WebProject\WebProject\obj\Debug\net5.0\Razor\Views\Writer\WriterEditProfile.cshtml.g.cs
