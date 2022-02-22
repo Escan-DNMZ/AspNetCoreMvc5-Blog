@@ -22,18 +22,6 @@ namespace WebProject.Controllers
     public class WriterController : BaseController
     {
         WriterManager wm = new WriterManager(new EfWriterRepository());
-        public IActionResult Index()
-        {
-            return View();
-        }
-        public IActionResult WriterProfile()
-        {
-            return View();
-        }
-        public IActionResult Test()
-        {
-            return View();
-        }
         public PartialViewResult WriterNavbarPartial()
         {
             return PartialView();

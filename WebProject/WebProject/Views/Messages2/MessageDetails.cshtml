@@ -1,0 +1,27 @@
+﻿@model Message2
+@{
+    ViewData["Title"] = "MessageDetails";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+
+
+<label>Id</label>
+@Html.TextBoxFor(x => x.MessageId, new { @class = "form-control", disabled = "disabled" })
+
+<br />
+
+<label>Title</label>
+@Html.TextBoxFor(x => x.Subject, new { @class = "form-control", disabled = "disabled" })
+
+<br />
+
+<label>Content</label>
+@Html.TextAreaFor(x => x.MessageDetails, 20, 3, new { @class = "form-control", disabled = "disabled" })
+
+
+<input type="hidden" asp-for="MessageDate" />
+@*null değer döndürmemesi için*@
+<br />
+
+

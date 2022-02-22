@@ -17,5 +17,9 @@ namespace EntityLayer.Concrete
         public string MessageDetails { get; set; }
         public DateTime MessageDate { get; set; }
         public bool MessageStatus { get; set; }
+
+        //One To Many Sender ve Receiver Id sini Writer dan alıyor
+        public Writer SenderUser { get; set; }
+        public Writer ReceiverUser { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 @{
-    string controller = this.ViewContext.RouteData.Values["controller"].ToString();
-    string action = this.ViewContext.RouteData.Values["action"].ToString();
+    string controller = this.ViewContext.RouteData.Values["controller"]?.ToString();
+    string action = this.ViewContext.RouteData.Values["action"]?.ToString();
 }
 
 <!DOCTYPE html>
@@ -29,6 +29,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="/web/css/fontawesome-all.css" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
           rel="stylesheet">
+
+    @RenderSection("Styles", required: false)
 </head>
 
 <body>
@@ -43,7 +45,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </a>
                 </div>
 
-                @await Html.PartialAsync("Partial2")
+                @await Component.InvokeAsync("BlogNavBar")
 
                 <div class="col-md-4 log-icons text-right">
 
@@ -76,7 +78,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
 
-        @await Html.PartialAsync("Partial1")
+        @await Html.PartialAsync("~/Views/Default/Partial1.cshtml")
+
+
+
 
     </header>
     <!--//header-->
@@ -86,7 +91,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <p >@controller</p>
+            <p>@controller</p>
         </li>
         <li class="breadcrumb-item active">@action </li>
     </ol> @* ahanda bura *@
@@ -140,7 +145,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- //Custom-JavaScript-File-Links -->
     <script src="/web/js/bootstrap.js"></script>
 
-
+    @RenderSection("Scripts", required: false)
 </body>
 
 </html>

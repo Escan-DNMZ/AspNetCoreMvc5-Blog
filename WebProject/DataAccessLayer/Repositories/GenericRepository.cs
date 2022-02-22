@@ -28,6 +28,7 @@ namespace DataAccessLayer.Repositories
 
         public void Insert(T t)
         {
+            
             c.Update(t);
             c.Add(t);
             c.SaveChanges();

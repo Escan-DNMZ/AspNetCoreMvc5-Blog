@@ -2,21 +2,24 @@
 using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using WebProject.Base;
 using WebProject.Models;
 
 namespace WebProject.Controllers
 {
     
-    public class BlogController : Controller
+    
+    public class BlogController : BaseController
     {
         BlogManager bm = new BlogManager(new EfBlogRepository());
-
+        [AllowAnonymous]     
         public IActionResult Index(int categoryid)
         {
             var values = new BlogListByCategoryViewModel()
@@ -36,7 +39,7 @@ namespace WebProject.Controllers
 
             return View(values);
         }
-
+        [AllowAnonymous]
         public IActionResult BlogReadAll(int id)
         {
             var model = new BlogViewModel {Blog = bm.GetById(id, x => x.Category)};
@@ -46,10 +49,8 @@ namespace WebProject.Controllers
 
         public IActionResult BlogListByWriter()
         {
-            //LoginController dan Claims bilgilerinden Name i buraya yönlendiriyoruz
-            var id = Convert.ToInt32(((ClaimsIdentity) User.Identity)?.FindFirst(ClaimTypes.Name)?.Value);
-            
-            var v = bm.GetBlogListByWriter(id);
+
+            var v = bm.GetBlogListByWriter(Id);
             return View(v);
         }
 
@@ -72,7 +73,7 @@ namespace WebProject.Controllers
             {
                 p.BlogStatus = true;
                 p.BlogCreateDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-                p.WriterId = Convert.ToInt32(((ClaimsIdentity) User.Identity)?.FindFirst(ClaimTypes.Name)?.Value);
+                p.WriterId = Id;
                 bm.TAdd(p);
                 return RedirectToAction("BlogListByWriter", "Blog");
             }
@@ -113,7 +114,7 @@ namespace WebProject.Controllers
 
             if (result.IsValid)
             {
-                b.WriterId = Convert.ToInt32(((ClaimsIdentity) User.Identity)?.FindFirst(ClaimTypes.Name)?.Value);
+                b.WriterId =   Id;
                 b.BlogStatus = true;
 
                 bm.TUpdate(b);

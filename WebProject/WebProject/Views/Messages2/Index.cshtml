@@ -1,0 +1,28 @@
+﻿@model List<Message2>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Subject</th>
+        <th>Sender</th>
+        <th>Date</th>
+        <th>Open Message</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.SenderId</td>
+            <td>@item.Subject</td>
+            <td>@item.SenderUser.WriterName</td>
+            <td>@item.MessageDate.ToString("d")</td>
+            <td><a href="/Messages2/MessageDetails/@item.MessageId" class="btn btn-warning">Details</a></td>
+        </tr>
+    }
+</table>
+<br />  
+<a href="/Blog/BlogAdd/" class="btn btn-primary">New Message</a>
+

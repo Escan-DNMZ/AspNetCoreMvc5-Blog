@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebProject.Middleware;
 
 namespace WebProject
 {
@@ -61,7 +62,6 @@ namespace WebProject
 
             app.UseStaticFiles();
 
-            
             app.UseRouting();
 
             app.UseAuthorization();
@@ -81,7 +81,8 @@ namespace WebProject
 
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Blog}/{action=Index}/{id?}");
+                    pattern: "{controller=Blog}/{action=Index}/{id?}",
+                    defaults: new { controller = "Blog", action = "Index" });
 
                 //endpoints.MapDefaultControllerRoute();
             });

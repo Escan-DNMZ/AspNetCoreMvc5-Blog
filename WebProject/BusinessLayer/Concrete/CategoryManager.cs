@@ -1,8 +1,10 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace BusinessLayer.Concrete
@@ -53,7 +55,22 @@ namespace BusinessLayer.Concrete
 
         public List<Category> GetCategoryAll(Expression<Func<Category, bool>> filter = null, params Expression<Func<Category, object>>[] includeProperty)
         {
-            throw new NotImplementedException();
+            IQueryable<Category> query = _categoryDal.Query();
+
+            if (filter != null)
+            {
+                query = query.Where(filter);
+            }
+
+            if (includeProperty.Any())
+            {
+                foreach (var item in includeProperty) // 0, 1, 2 , 3
+                {
+                    query = query.Include(item);
+                }
+            }
+
+            return query.ToList();
         }
     }
 }

@@ -1,0 +1,50 @@
+﻿@model Writer
+
+@section Styles {
+
+    <style>
+        .rounded {
+            border-radius: 50% !important;
+            width: 65px;
+            height: 65px;
+        }
+    </style>
+
+}
+
+<div class="col-md-4 top-forms text-center mt-lg-3 mt-md-1 mt-0">
+
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <span class="mx-lg-4 mx-md-2  mx-1">
+            <a href="/Login/Index">
+                <i class="fas fa-lock"></i> Sign In
+            </a>
+        </span>
+        <span>
+            <a href="/Register/Index/">
+                <i class="far fa-user"></i> Register
+            </a>
+        </span>
+    }
+    else
+    {
+        <span>Welcome Back!</span>
+
+
+        <a href="#" class="nav-link">
+            <div class="nav-profile-image">
+                <img style="border-radius:100%!important; width: 100px; height: 100px;" class="rounded" src="~/WriterImageFiles/@Model.WriterImage" alt="profile">
+            </div>
+            <div class="nav-profile-text d-flex flex-column">
+                <span class="font-weight-bold mb-2">@Model.WriterName</span>
+                <span class="text-secondary text-small">@Model.WriterCity</span>
+            </div>
+            <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+        </a>
+
+
+
+    }
+
+</div>

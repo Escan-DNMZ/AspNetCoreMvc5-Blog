@@ -11,11 +11,11 @@ namespace WebProject.ViewComponents.Writer
 {
     public class WriterMessageNotification:ViewComponent
     {
-        MessageManager mm = new MessageManager(new EfMessageRepository());
+        Message2Manager mm = new Message2Manager(new EfMessage2Repository());
         public IViewComponentResult Invoke()
         {
-            string p = ((ClaimsIdentity)User.Identity)?.FindFirst(ClaimTypes.Email)?.Value;
-            var values = mm.GetInboxListByWriter(p);
+            int id = Convert.ToInt32(((ClaimsIdentity)User.Identity)?.FindFirst(ClaimTypes.Name)?.Value);
+            var values = mm.GetInboxListByWriter(id);
             return View(values);
         }
     }

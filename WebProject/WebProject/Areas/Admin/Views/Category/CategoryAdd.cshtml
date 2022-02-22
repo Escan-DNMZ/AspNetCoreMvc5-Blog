@@ -1,0 +1,24 @@
+﻿@using EntityLayer.Concrete
+@model Category
+@{
+    ViewData["Title"] = "CategoryAdd";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("CategoryAdd", "Category", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.CategoryId)
+    <br />
+
+    <label>Name</label>
+    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+    <br />
+
+    <label>Status</label>
+    @Html.DropDownListFor(x => x.CategoryStatus, (List<SelectListItem>)ViewBag.Statu, new { @class = "form-control dropdown" })
+    <br />
+
+    <button type="submit" class="btn btn-primary submit mb-4">Add</button>
+
+}
+
