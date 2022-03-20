@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebProject.Controllers
@@ -7,6 +8,7 @@ namespace WebProject.Controllers
     public class AboutController : Controller
     {
         AboutManager bm = new AboutManager(new EfAboutRepository());
+        [AllowAnonymous]
         public IActionResult Index()
         {
             var values = bm.GetList();
@@ -17,6 +19,7 @@ namespace WebProject.Controllers
             
             return PartialView();
         }
+        [AllowAnonymous]
         public IActionResult ReadMore()
         {
             var values = bm.GetList();

@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Result Visualization</title>
+    @section scripts{
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>   }
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeProductResult", "Chart")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChart(result);
+                    });
+                }
+            });
+        });
+        function drawChart(result) {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'CategoryName');
+
+            var dataArray = [];
+            $.each(result, function (i, obj) {
+                dataArray.push([obj.CategoryName]);
+            });
+            data.addRows(dataArray);
+            var columnChartOptions = {
+                title: "Category",
+                width: 1000,
+                height: 750,
+                bar: { groupWidth: "20%" },
+            };
+            var columnChart = new google.visualization.PieChart(document
+                .getElementById('chartdiv'));
+            columnChart.draw(data, columnChartOptions);
+        }
+    </script>
+</head>
+<div class="row">
+    <div class="col-lg-12">
+        <div id="chartdiv" style="width:800px; height:600px;">
+            <h2>Statitic</h2>
+        </div>
+    </div>
+</div>
+</html>
+

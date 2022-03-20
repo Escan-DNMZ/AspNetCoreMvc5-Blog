@@ -38,7 +38,8 @@ namespace BusinessLayer.Concrete
 
         public List<Comment> GetList()
         {
-            throw new NotImplementedException();
+            return _commentDal.GetAll();
+            
         }
 
         public List<Comment> GetListByCount(int id, int count)

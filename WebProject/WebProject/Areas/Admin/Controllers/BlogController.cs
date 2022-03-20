@@ -1,4 +1,5 @@
 ﻿using ClosedXML.Excel;
+using DataAccessLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,9 +10,11 @@ using WebProject.Areas.Admin.Models;
 
 namespace WebProject.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class BlogController : Controller
     {
-        public IActionResult ExportStaticExcelBlogList()
+
+        public IActionResult ExportDynamicExcelBlogList()
         {
             using (var workbook = new XLWorkbook())
             {
@@ -30,21 +33,34 @@ namespace WebProject.Areas.Admin.Controllers
                 {
                     workbook.SaveAs(stream);
                     var content = stream.ToArray();
-                    return File(content,"application/vnd.openxmlformats - " +
-                        "pfficedocument.spreadsheetml.sheet","Work1.xlsx");
+                    return File(content,"application/vnd.openxmlformats-"+"pfficedocument.spreadsheetml.sheet","Work1.xlsx");
                 }
             }
                
         }
+
         public List<BlogModel> GetBlogList()
         {
-            List<BlogModel> bm = new List<BlogModel>
+            List<BlogModel> bm = new List<BlogModel>();
+            using(var c = new Context())
             {
-                new BlogModel{Id=1,BlogName="Programlama"},
-                new BlogModel{Id=2,BlogName="Tesla"},
-                new BlogModel{Id=3,BlogName="2023 seçimleri"}
-            };
+                bm = c.Blogs.Select(x => new BlogModel
+                {
+                    Id = x.BlogId,
+                    BlogName = x.BlogTitle
+                }).ToList();
+            }
             return bm;
         } 
+
+        public IActionResult BlogListExcel()
+        {
+
+            return View();
+        }
+        public PartialViewResult BlogNavbarPartial()
+        {
+            return PartialView();
+        }
     }
 }

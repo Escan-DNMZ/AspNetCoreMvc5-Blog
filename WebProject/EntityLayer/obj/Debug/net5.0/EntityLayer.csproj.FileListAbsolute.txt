@@ -2,7 +2,6 @@ C:\Users\escan\source\repos\WebProject\EntityLayer\bin\Debug\net5.0\EntityLayer.
 C:\Users\escan\source\repos\WebProject\EntityLayer\bin\Debug\net5.0\EntityLayer.dll
 C:\Users\escan\source\repos\WebProject\EntityLayer\bin\Debug\net5.0\ref\EntityLayer.dll
 C:\Users\escan\source\repos\WebProject\EntityLayer\bin\Debug\net5.0\EntityLayer.pdb
-C:\Users\escan\source\repos\WebProject\EntityLayer\obj\Debug\net5.0\EntityLayer.csproj.AssemblyReference.cache
 C:\Users\escan\source\repos\WebProject\EntityLayer\obj\Debug\net5.0\EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\escan\source\repos\WebProject\EntityLayer\obj\Debug\net5.0\EntityLayer.AssemblyInfoInputs.cache
 C:\Users\escan\source\repos\WebProject\EntityLayer\obj\Debug\net5.0\EntityLayer.AssemblyInfo.cs
@@ -13,3 +12,19 @@ C:\Users\escan\source\repos\WebProject\EntityLayer\obj\Debug\net5.0\EntityLayer.
 C:\Users\escan\source\repos\WebProject\EntityLayer\bin\Debug\net5.0\EntityLayer.runtimeconfig.json
 C:\Users\escan\source\repos\WebProject\EntityLayer\bin\Debug\net5.0\EntityLayer.runtimeconfig.dev.json
 C:\Users\escan\source\repos\WebProject\EntityLayer\obj\Debug\net5.0\EntityLayer.genruntimeconfig.cache
+C:\Users\escan\source\repos\WebProject\EntityLayer\obj\Debug\net5.0\EntityLayer.csproj.AssemblyReference.cache
+D:\WebProject\EntityLayer\bin\Debug\net5.0\EntityLayer.deps.json
+D:\WebProject\EntityLayer\bin\Debug\net5.0\EntityLayer.runtimeconfig.json
+D:\WebProject\EntityLayer\bin\Debug\net5.0\EntityLayer.runtimeconfig.dev.json
+D:\WebProject\EntityLayer\bin\Debug\net5.0\EntityLayer.dll
+D:\WebProject\EntityLayer\bin\Debug\net5.0\EntityLayer.pdb
+D:\WebProject\EntityLayer\obj\Debug\net5.0\EntityLayer.csproj.AssemblyReference.cache
+D:\WebProject\EntityLayer\obj\Debug\net5.0\EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\WebProject\EntityLayer\obj\Debug\net5.0\EntityLayer.AssemblyInfoInputs.cache
+D:\WebProject\EntityLayer\obj\Debug\net5.0\EntityLayer.AssemblyInfo.cs
+D:\WebProject\EntityLayer\obj\Debug\net5.0\EntityLayer.csproj.CoreCompileInputs.cache
+D:\WebProject\EntityLayer\obj\Debug\net5.0\EntityLayer.dll
+D:\WebProject\EntityLayer\obj\Debug\net5.0\refint\EntityLayer.dll
+D:\WebProject\EntityLayer\obj\Debug\net5.0\EntityLayer.pdb
+D:\WebProject\EntityLayer\obj\Debug\net5.0\EntityLayer.genruntimeconfig.cache
+D:\WebProject\EntityLayer\obj\Debug\net5.0\ref\EntityLayer.dll

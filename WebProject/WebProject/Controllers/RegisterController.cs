@@ -12,12 +12,14 @@ using System.Linq;
 using Microsoft.AspNetCore.Http;
 using WebProject.Models;
 using FormFile = Microsoft.AspNetCore.Http.FormFile;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebProject.Controllers
 {
     public class RegisterController : Controller
     {
         WriterManager wm = new WriterManager(new EfWriterRepository());
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult Index(Writer p)
         {

@@ -2,7 +2,6 @@ C:\Users\escan\source\repos\WebProject\CoreLayer\bin\Debug\net5.0\CoreLayer.deps
 C:\Users\escan\source\repos\WebProject\CoreLayer\bin\Debug\net5.0\CoreLayer.dll
 C:\Users\escan\source\repos\WebProject\CoreLayer\bin\Debug\net5.0\ref\CoreLayer.dll
 C:\Users\escan\source\repos\WebProject\CoreLayer\bin\Debug\net5.0\CoreLayer.pdb
-C:\Users\escan\source\repos\WebProject\CoreLayer\obj\Debug\net5.0\CoreLayer.csproj.AssemblyReference.cache
 C:\Users\escan\source\repos\WebProject\CoreLayer\obj\Debug\net5.0\CoreLayer.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\escan\source\repos\WebProject\CoreLayer\obj\Debug\net5.0\CoreLayer.AssemblyInfoInputs.cache
 C:\Users\escan\source\repos\WebProject\CoreLayer\obj\Debug\net5.0\CoreLayer.AssemblyInfo.cs
@@ -10,3 +9,16 @@ C:\Users\escan\source\repos\WebProject\CoreLayer\obj\Debug\net5.0\CoreLayer.cspr
 C:\Users\escan\source\repos\WebProject\CoreLayer\obj\Debug\net5.0\CoreLayer.dll
 C:\Users\escan\source\repos\WebProject\CoreLayer\obj\Debug\net5.0\ref\CoreLayer.dll
 C:\Users\escan\source\repos\WebProject\CoreLayer\obj\Debug\net5.0\CoreLayer.pdb
+C:\Users\escan\source\repos\WebProject\CoreLayer\obj\Debug\net5.0\CoreLayer.csproj.AssemblyReference.cache
+D:\WebProject\CoreLayer\bin\Debug\net5.0\CoreLayer.deps.json
+D:\WebProject\CoreLayer\bin\Debug\net5.0\CoreLayer.dll
+D:\WebProject\CoreLayer\bin\Debug\net5.0\CoreLayer.pdb
+D:\WebProject\CoreLayer\obj\Debug\net5.0\CoreLayer.csproj.AssemblyReference.cache
+D:\WebProject\CoreLayer\obj\Debug\net5.0\CoreLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\WebProject\CoreLayer\obj\Debug\net5.0\CoreLayer.AssemblyInfoInputs.cache
+D:\WebProject\CoreLayer\obj\Debug\net5.0\CoreLayer.AssemblyInfo.cs
+D:\WebProject\CoreLayer\obj\Debug\net5.0\CoreLayer.csproj.CoreCompileInputs.cache
+D:\WebProject\CoreLayer\obj\Debug\net5.0\CoreLayer.dll
+D:\WebProject\CoreLayer\obj\Debug\net5.0\refint\CoreLayer.dll
+D:\WebProject\CoreLayer\obj\Debug\net5.0\CoreLayer.pdb
+D:\WebProject\CoreLayer\obj\Debug\net5.0\ref\CoreLayer.dll

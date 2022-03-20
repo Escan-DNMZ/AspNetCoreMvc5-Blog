@@ -1,4 +1,5 @@
 ﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete
 {
-    public class Context:DbContext
+    public class Context : IdentityDbContext<AppUser,AppRole,int>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilde)
         {
-            optionsBuilde.UseSqlServer("server=LAPTOP-K9OQTN1D\\SQLEXPRESS;database=CoreBlogDb;integrated security=true;"); 
+            optionsBuilde.UseSqlServer("server=LAPTOP-OLR3DSM8\\SQLEXPRESS;database=CoreBlogDb;integrated security=true;"); 
         }
         /* One To Many Message tablosunu Writer a bağlayarak ordan Sender ve Receiver Id sini aldık
         ardından Message2 de ise bu Message da bulunan Sender ve Receiver Id sini Message2 ye aktardık */
@@ -30,7 +31,7 @@ namespace DataAccessLayer.Concrete
                 .WithMany(y => y.WriterReceiver)
                 .HasForeignKey(z => z.ReceiverId)
                 .OnDelete(DeleteBehavior.ClientSetNull);
-
+            base.OnModelCreating(modelBuilder);
 
         }
 
@@ -45,5 +46,6 @@ namespace DataAccessLayer.Concrete
         public DbSet<Notification> Notifications { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Message2> Messages2 { get; set; }
+        public DbSet<Admin> Admins { get; set; }
     }
 }

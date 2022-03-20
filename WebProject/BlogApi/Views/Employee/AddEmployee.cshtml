@@ -1,0 +1,13 @@
+﻿@using BlogApi.Controllers
+@model BlogApi.Controllers.EmployeeController.Class1
+@{
+    ViewData["Title"] = "AddEmployee";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<form method="post">
+    <label>Worker Name</label>
+    <input type="text" asp-for="@Model.Name" class="form-control" />
+    <br /> 
+    <button type="submit" class="btn btn-info">Employee Add</button>
+</form>

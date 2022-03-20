@@ -1,0 +1,24 @@
+﻿@using BlogApi.Controllers
+@model List<BlogApi.Controllers.EmployeeController.Class1>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table>
+    <tr>
+        <td>#</td>
+        <td>Adı Soyadı</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td><a href="/Employee/EditEmployee/@item.Id" class="btn btn-outline-success">Düzenle</a></td>
+            <td><a href="/Employee/DeleteEmployee/@item.Id" class="btn btn-outline-danger">Sil</a></td>
+            
+        </tr>
+    }
+</table>
+<a href="/Employee/AddEmployee/" class="btn btn-outline-primary">New Employee</a>
