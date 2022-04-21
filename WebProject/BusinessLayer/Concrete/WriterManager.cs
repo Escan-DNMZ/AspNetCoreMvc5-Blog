@@ -61,9 +61,6 @@ namespace BusinessLayer.Concrete
             return query.FirstOrDefault(x => x.WriterId == id);
         }
 
-        public List<Writer> GetCategoryAll(Expression<Func<Writer, bool>> filter = null, params Expression<Func<Writer, object>>[] includeProperty)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

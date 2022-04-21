@@ -9,5 +9,6 @@ namespace BusinessLayer.Abstract
 {
     public interface IAboutService:IGenericService<About>
     {
+        List<T> GetCategoryAll(Expression<Func<T, bool>> filter = null, params Expression<Func<T, object>>[] includeProperty);
     }
 }

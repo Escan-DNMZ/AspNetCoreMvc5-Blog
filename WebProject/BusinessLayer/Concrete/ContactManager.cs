@@ -46,9 +46,6 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-        public List<Contact> GetCategoryAll(Expression<Func<Contact, bool>> filter = null, params Expression<Func<Contact, object>>[] includeProperty)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

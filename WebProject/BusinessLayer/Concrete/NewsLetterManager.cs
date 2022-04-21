@@ -22,10 +22,7 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-        public List<NewsLatter> GetCategoryAll(Expression<Func<NewsLatter, bool>> filter = null, params Expression<Func<NewsLatter, object>>[] includeProperty)
-        {
-            throw new NotImplementedException();
-        }
+      
 
         public List<NewsLatter> GetList()
         {

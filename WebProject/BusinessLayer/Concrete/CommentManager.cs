@@ -52,10 +52,6 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-        public List<Comment> GetCategoryAll(Expression<Func<Comment, bool>> filter = null, params Expression<Func<Comment, object>>[] includeProperty)
-        {
-            throw new NotImplementedException();
-        }
         
         public List<Comment> GetCommentListByWriter(int id, params Expression<Func<Comment, object>>[] includeProperty)
         {
