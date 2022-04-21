@@ -16,6 +16,6 @@ namespace BusinessLayer.Abstract
 
 
         T GetById(int id, params Expression<Func<T, object>>[] includeProperty);
-        List<T> GetCategoryAll(Expression<Func<T, bool>> filter = null, params Expression<Func<T, object>>[] includeProperty);
+        
     }
 }
